@@ -74,7 +74,7 @@ From the relevant literature and related works that have been discussed above, t
 
 As an illustrative example, Figure 1 below provides a simple overview of the project architecture and methodology that was used in developing this project.
 
-![](RackMultipart20220107-4-1fyuken_html_b34c4a6555718e89.png)
+![image](https://user-images.githubusercontent.com/50828923/148835471-0d1e8e68-ab3b-429b-bb63-643c3f246520.png)
 
 **Figure 1** : Project overview
 
@@ -90,7 +90,8 @@ The Bitcoin price data required minimal cleaning however additional features wer
 
 The project utilised the VADER sentiment analysis library due to its computational efficiency. Given the large volume of tweets that were extracted for analysis in this project, the efficiency of the VADER library was paramount. The resulting VADER sentiment compound was used to compute a sentiment score in conjunction with the features of &#39;Likes&#39;, &#39;Followers&#39; and &#39;Retweets&#39; as input variables for each tweet, as demonstrated by the equation below:
 
-![](RackMultipart20220107-4-1fyuken_html_82d013bba400d2b.gif)
+![image](https://user-images.githubusercontent.com/50828923/148835561-2928dcf6-a82c-4507-b9c7-cecba9ed99f8.png)
+
 
 The equation above attempts to quantify the impact which each individual tweet may have on overall sentiment by multiplying the VADER compound by the user reactions. Additionally, where a user has no followers, as is the case with Twitter bots, the equation effectively removes that sentiment observation from further analysis by returning a sentiment score of zero.
 
@@ -137,12 +138,14 @@ The project used Jupyter notebooks with Python 3.8 kernels to build the source c
 
 Twitter data consisting of 1,000 new and unique tweets was collected each hour for a period of approximately 33 days. The newly collected tweets were cleaned each hour in accordance with the data processing steps set out in the methodology. At the conclusion of the data collection period, a total of 635,827 tweets had been collected and cleaned. Additionally, a total of 793 hourly price observations were collected for Bitcoin, where the observed price of Bitcoin has ranged significantly from approximately USD$40,000 to over USD$60,000. Figure 2, below, shows the number of daily tweets that have been collected and stored for modelling.
 
-![](RackMultipart20220107-4-1fyuken_html_ec430f80de91d4c3.png)
+![image](https://user-images.githubusercontent.com/50828923/148835622-e9d73253-5cb8-47eb-ab35-c05761db5b6c.png)
 
 **Figure 2:** Number of Tweets collected each day
 
 F ![](RackMultipart20220107-4-1fyuken_html_d7227341a0ef24d4.png)
  ollowing the collection of the relevant Twitter and Bitcoin price data, sentiment analysis was carried out in accordance with the sentiment analysis methodology which was previously outlined in Section 3.1. Exploratory analysis of the collected dataset was carried out as demonstrated by Figure 3, below, which illustrates a comparison of the changes between the hourly sentiment score and Bitcoin price as the data collection for this project progressed.
+
+![image](https://user-images.githubusercontent.com/50828923/148835683-5cb9d2e8-47ea-4fe8-96b4-5aef1e3b7e56.png)
 
 **Figure 3:** Comparison of hourly Bitcoin price and Twitter sentiment score
 
@@ -210,8 +213,13 @@ The predictive performance of the tuned XGBoost Random Forest classifier is pres
 | Macro average | 0.63 | 0.63 | 0.63 | 76 |
 | Weighted average | 0.63 | 0.63 | 0.63 | 76 |
 
- ![](RackMultipart20220107-4-1fyuken_html_2efc97e32802ebbb.png) **Figure 4:** XGBRF Confusion Matrix 
- ![](RackMultipart20220107-4-1fyuken_html_e15e2dafda77d11a.png) **Figure 5:** XGBRF Feature Importances
+![image](https://user-images.githubusercontent.com/50828923/148835786-dc42db82-55e8-4520-8c0c-63a74b37fd79.png)
+
+**Figure 4:** XGBRF Confusion Matrix 
+
+![image](https://user-images.githubusercontent.com/50828923/148835827-aed45fe5-7abf-4b56-8004-705e1db60191.png)
+
+**Figure 5:** XGBRF Feature Importances
 
 <h3 align=center>5. Discussion</h3>
 
